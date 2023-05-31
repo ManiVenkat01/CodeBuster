@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+</head>
+<script>
+
+    var car = {
+        model: '',
+        color: '',
+        engine: [{
+            type:'hybrid',
+            torq:520,
+            engineModel: {
+                type: 'v8',
+
+            }
+
+        }]
+    };
+
+
+var carList = [];
+var t = 1234;
+
+const x = typeof t;
+
+// var t1 = "";
+
+const x1 = t + "5678";
+
+
+// console.log(x1);
+console.log(car.engine[0].engineModel.type)
+carList.push(1);
+carList.push(2);
+// carList.push(2);
+// const ind =carList.findIndex(v => v ==2);
+carList.splice(1,0,3);
+
+// console.log(ind)
+add(carList,10)
+console.log(carList);
+function add(array,v){
+    array.push(v);
+    return array;
+
+}
+
+</script>
+
+<body>
+
+    <h1> Front end day2</h1>
+</body>
+
+</html>
