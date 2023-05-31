@@ -15,5 +15,6 @@ public class Student {
 
         student.setName("Srikar");
         System.out.println(student.getName());
+
     }
 }
