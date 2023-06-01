@@ -17,13 +17,14 @@
         qualification: "MS in CS",
         Country: "US",
         git: "dada.com" ,
-        hobbies: ['watching movies','Playing TT'],
+        hobbies: {Entertaiment:['watching movies','music'],sports:['cricket,TT']},
 
     };
    var img_src = "asset/IMG_0995.JPG"
-    var LastHobby = myProfile.hobbies.length-1
-    console.log(myProfile.hobbies[LastHobby])
-
+    var LastHobbySport = myProfile.hobbies.sports.length-1
+    var LastHobbyEntertaiment = myProfile.hobbies.Entertaiment.length-1
+    console.log(myProfile.hobbies.sports[LastHobbySport])
+    console.log(myProfile.hobbies.Entertaiment[LastHobbyEntertaiment])
   </script>
 <body>
 
@@ -43,7 +44,7 @@
     <p>Hobbies: <span id="hobbies"></span></p>
 </p>
 <script>
-    document.getElementById("image").src = "asset/IMG_0995.JPG";
+    document.getElementById("image").src = img_src;
     document.getElementById("fname").innerHTML = myProfile.FName;
     document.getElementById("lname").innerHTML = myProfile.Lname;
     document.getElementById("phone").innerHTML = myProfile.Ph;
