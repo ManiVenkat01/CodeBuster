@@ -2,33 +2,37 @@
     <script>
         let amount = 200;
         let sendAmount;
-        let finalAmount;
-        var environment = "Test";
-        console.log(typeof(amount));
+        
+        var environment = "Prodction";
+        // console.log(typeof(amount));
 
-        if (typeof(amount) == "number" ){
+        if (typeof(amount) == "number" && amount > 0){
             
-            if (environment == "Development"){
+            if (environment.toLowerCase() == "development"){
             sendAmount  = amount + (amount*10)/100;
-            finalAmount = sendAmount;
+         
             }
-            else if (environment == "Production"){
+            else if (environment.toLowerCase() == "production"){
                 sendAmount  = amount + (amount*5)/100;
-                finalAmount = sendAmount;
+                
             }
-            else if (environment == "Test"){
+            else if (environment.toLowerCase() == "test"){
                 sendAmount  = amount + (amount*20)/100;
-                finalAmount = sendAmount;
+                
             }
-            else if (environment == "Stage"){
+            else if (environment.toLowerCase() == "stage"){
                 sendAmount  = amount + (amount*30)/100;
-                finalAmount = sendAmount;
+                
+            }
+            else {
+                console.log("enter a valid environment");
+                environment = "invalid"
+
             }
 
         }
         else{
             console.log("enter a number");
-            finalAmount = "'Error: enter a number'"
         }
         
 
@@ -40,9 +44,9 @@
         <p>Sending amount = </strong><span id = "send"> </strong></p>
         
         <script>
-            
-            document.getElementById("send").innerHTML = " " + finalAmount ;
-            document.getElementById("envi").innerHTML = " " + environment + "" ;
+            if (sendAmount>0 && environment != "invalid" ) {
+            document.getElementById("send").innerHTML = " " + sendAmount ;
+            document.getElementById("envi").innerHTML = " " + environment + "" ;}
         </script>
     </body>
 </html>
