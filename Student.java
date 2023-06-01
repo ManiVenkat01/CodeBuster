@@ -13,8 +13,6 @@ public class Student {
         student.setName("Mani Kandan Venkataram");
         System.out.println(student.getName());
 
-        student.setName("Srikar");
-        System.out.println(student.getName());
 
     }
 }
