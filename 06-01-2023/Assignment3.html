@@ -1,0 +1,44 @@
+<html>
+    <script>
+        let amount = 200;
+        let sendAmount;
+        let finalAmount;
+        var environment = "test";
+        
+        if (typeof(amount) == "number" ){
+            
+            if (environment == "Dev"){
+            sendAmount  = amount>=100?+amount + (amount*10)/100:amount;
+            finalAmount = sendAmount;
+            }
+            else if (environment == "prod"){
+                sendAmount  = amount>=100?+amount + (amount*5)/100:amount;
+                finalAmount = sendAmount;
+            }
+            else if (environment == "test"){
+                sendAmount  = amount>=100?+amount + (amount*20)/100:amount;
+                finalAmount = sendAmount;
+            }
+            else if (environment == "stage"){
+                sendAmount  = amount>=100?+amount + (amount*30)/100:amount;
+                finalAmount = sendAmount;
+            }
+        }
+        else{
+            console.log("enter a number");
+            finalAmount = "'Error: enter a number'"
+        }
+        
+
+        console.log("Sending Amount is: "+sendAmount + " for " + environment +" enivironment.")
+    </script>
+
+    <body>
+        <h1>Sending amount = <span id = "send"> </span></h1>
+        
+        <script>
+            
+            document.getElementById("send").innerHTML = " " + finalAmount ;
+        </script>
+    </body>
+</html>
