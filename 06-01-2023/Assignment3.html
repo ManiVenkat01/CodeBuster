@@ -3,26 +3,28 @@
         let amount = 200;
         let sendAmount;
         let finalAmount;
-        var environment = "test";
-        
+        var environment = "Test";
+        console.log(typeof(amount));
+
         if (typeof(amount) == "number" ){
             
-            if (environment == "Dev"){
-            sendAmount  = amount>=100?+amount + (amount*10)/100:amount;
+            if (environment == "Development"){
+            sendAmount  = amount + (amount*10)/100;
             finalAmount = sendAmount;
             }
-            else if (environment == "prod"){
-                sendAmount  = amount>=100?+amount + (amount*5)/100:amount;
+            else if (environment == "Production"){
+                sendAmount  = amount + (amount*5)/100;
                 finalAmount = sendAmount;
             }
-            else if (environment == "test"){
-                sendAmount  = amount>=100?+amount + (amount*20)/100:amount;
+            else if (environment == "Test"){
+                sendAmount  = amount + (amount*20)/100;
                 finalAmount = sendAmount;
             }
-            else if (environment == "stage"){
-                sendAmount  = amount>=100?+amount + (amount*30)/100:amount;
+            else if (environment == "Stage"){
+                sendAmount  = amount + (amount*30)/100;
                 finalAmount = sendAmount;
             }
+
         }
         else{
             console.log("enter a number");
