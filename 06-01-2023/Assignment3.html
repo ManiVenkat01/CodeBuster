@@ -34,11 +34,13 @@
     </script>
 
     <body>
-        <h1>Sending amount = <span id = "send"> </span></h1>
+        <p> You are in <span id="envi"> </span> environment</p>
+        <p>Sending amount = </strong><span id = "send"> </strong></p>
         
         <script>
             
             document.getElementById("send").innerHTML = " " + finalAmount ;
+            document.getElementById("envi").innerHTML = " " + environment + "" ;
         </script>
     </body>
 </html>
