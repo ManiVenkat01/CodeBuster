@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function myfun() {
+            const fname = document.getElementById("fname").value;
+            const lname = document.getElementById("lname").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const dob = document.getElementById("dob").value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const hobbies = [];
+
+            const checkboxes = document.querySelectorAll('input[name="hobbies"]:checked');
+            checkboxes.forEach(function(checkbox) {
+                hobbies.push(checkbox.value);
+            });
+
+
+            document.getElementById('d_name').innerHTML = "Full Name: " + fname + " " + lname;
+            document.getElementById('d_ph').innerHTML = "Phone Number: " + phone;
+            document.getElementById('d_email').innerHTML = "Email: " + email;
+            document.getElementById('d_dob').innerHTML = "Date of Birth: " + dob;
+            document.getElementById('d_gender').innerHTML = "Gender: " + gender;
+            document.getElementById('d_hobbies').innerHTML = "Hobbies: " + hobbies.join(", ");
+
+        }
+    </script>
+</head>
+<body>
+    <h1>My Profile</h1>
+
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your First Name"><br><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your Last Name"><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email"><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" placeholder="Enter your Date of Birth"><br><br>      
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+
+        <label for="hobbies">Hobbies:</label><br>
+        <input type="checkbox" id="hobby1" name="hobbies" value="Movies">
+        <label for="hobby1">Movies</label><br>
+        <input type="checkbox" id="hobby2" name="hobbies" value="Cricket">
+        <label for="hobby2">Cricket</label><br>
+        <input type="checkbox" id="hobby3" name="hobbies" value="Music">
+        <label for="hobby3">Music</label><br><br>
+
+        <button type="button" onclick="myfun()">Submit</button>
+    </form>
+
+ 
+    <h2>Submitted Values:</h2>
+    
+    <p id="d_name"></p>
+    <p id="d_ph"></p>
+    <p id="d_email"></p>
+    <p id="d_dob"></p>
+    <p id="d_gender"></p>
+    <p id="d_hobbies"></p>
+    
+
+</body>
+</html>
